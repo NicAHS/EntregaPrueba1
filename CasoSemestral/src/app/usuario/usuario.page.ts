@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AnimationController, MenuController } from '@ionic/angular';
+import { AlertController, AnimationController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,16 +12,49 @@ import { Router } from '@angular/router';
 export class UsuarioPage implements OnInit {
   @ViewChild("imagen", { read: ElementRef, static: true }) titulo!: ElementRef;
 
+  usuario = localStorage.getItem('nombreUsuario');
+
   username: string = "";
-  constructor(private animationCtrl: AnimationController,private router: Router) { }
+  password: string = "";
+  constructor(
+    private animationCtrl: AnimationController, 
+    private alertController: AlertController,
+    private router: Router
+    
+    ){
+
+   }
 
   ngOnInit() {
     this.crecer();
   }
 
-  onLogin() {
-    this.router.navigate(['/inicio', { username: this.username }]);
+  // onLogin() {
+  //   this.router.navigate(['/inicio', { username: this.username }]);
+  // }
+
+  async ingresar(){
+    localStorage.setItem('usuario','Admin');
+    localStorage.setItem('constrasena','1234');
+    
+    if (this.username == "" || this.password == ""){
+      const alert = await this.alertController.create({
+        header: 'Atención',
+        message: 'Debes ingresar todos los datos',
+        buttons: ['OK']
+      })
+      await alert.present();
+        this.router.navigate(['/usuario', { username: this.username }]);
+        return;
+    }
+    else{
+      this.router.navigate(['/inicio', { username: this.username }]);
+      return;
+    }
+
   }
+
+  
 
   public avanzarDerecha() {
     const animation = this.animationCtrl
