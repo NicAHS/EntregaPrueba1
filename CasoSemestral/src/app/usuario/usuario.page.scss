@@ -1,3 +1,4 @@
+
 #tittle{
     padding-top: 50px;
 }
@@ -12,6 +13,10 @@
     40%  {left:100px; top:0px;}
     80%  {left:-100px; top:0px;}
     100% {left:0px; top:0px;}
+}
+
+ion-item > ion-label,ion-input{
+    /*border: SOLID RED 2PX;*/
 }
 
 #button-inicio-sesion{
