@@ -10,8 +10,4 @@
 <ion-content>
   <div id="contenidoqr"><ion-img #qr id="qrcode" src="https://rrppduocucsancarlos.files.wordpress.com/2014/11/qrplanetyutu.png?w=474"></ion-img></div>
   <div id="iconoqr"><ion-button href="/asistencia" >Escanear</ion-button></div>
-  <div id="iconoqr">
-    <ion-button (click)="takePicture()">Tomar Foto</ion-button>
-    <ion-img [src]="capturedImage" *ngIf="capturedImage"></ion-img>
-  </div>
 </ion-content>

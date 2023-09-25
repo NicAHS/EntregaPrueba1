@@ -2,8 +2,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AnimationController, MenuController } from '@ionic/angular';
 
-import { Camera, CameraResultType } from '@capacitor/camera';
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -14,9 +12,7 @@ export class InicioPage implements OnInit {
 
   username: string | null = null;
 
-  capturedImage: string | null = null;
-
-  constructor(private route: ActivatedRoute, private animationCtrl: AnimationController) { }
+  constructor(private route: ActivatedRoute,private animationCtrl: AnimationController) { }
 
   ngOnInit() {
     this.username = this.route.snapshot.paramMap.get('username');
@@ -76,19 +72,4 @@ export class InicioPage implements OnInit {
   
     animationShake.play();
   }
-  async takePicture() {
-    try {
-        const image = await Camera.getPhoto({
-            quality: 90,
-            resultType: CameraResultType.DataUrl,
-        });
-        if (image.dataUrl) {
-            this.capturedImage = image.dataUrl;
-        } else {
-            console.error("No image data received");
-        }
-    } catch (error) {
-        console.error("Error taking picture:", error);
-    }
-}
 }
