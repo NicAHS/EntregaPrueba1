@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AlertController, AnimationController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -12,18 +13,18 @@ import { Router } from '@angular/router';
 export class UsuarioPage implements OnInit {
   @ViewChild("imagen", { read: ElementRef, static: true }) titulo!: ElementRef;
 
-  usuario = localStorage.getItem('nombreUsuario');
-
-  username: string = "";
-  password: string = "";
+  formularioLogin: FormGroup;
   constructor(
-    private animationCtrl: AnimationController, 
+    public fb: FormBuilder,
+    private animationCtrl: AnimationController,
     private alertController: AlertController,
-    private router: Router
-    
-    ){
-
-   }
+    private router: Router,
+  ) {
+    this.formularioLogin = this.fb.group({
+      'nombre': new FormControl("", Validators.required),
+      'contrasena': new FormControl("", Validators.required)
+    })
+  }
 
   ngOnInit() {
     this.crecer();
@@ -33,28 +34,40 @@ export class UsuarioPage implements OnInit {
   //   this.router.navigate(['/inicio', { username: this.username }]);
   // }
 
-  async ingresar(){
-    localStorage.setItem('usuario','Admin');
-    localStorage.setItem('constrasena','1234');
-    
-    if (this.username == "" || this.password == ""){
+  async ingresar() {
+    var f = this.formularioLogin.value;
+
+    var nombreUsuario = localStorage.getItem('usuario');
+    var contrasenaUsuario = localStorage.getItem('contrasena');
+
+    if (this.formularioLogin.invalid) {
       const alert = await this.alertController.create({
-        header: 'Atención',
+        header: 'Mensaje',
         message: 'Debes ingresar todos los datos',
         buttons: ['OK']
-      })
+      });
+
       await alert.present();
-        this.router.navigate(['/usuario', { username: this.username }]);
-        return;
-    }
-    else{
-      this.router.navigate(['/inicio', { username: this.username }]);
       return;
     }
+    let datos = localStorage.getItem("usuarios")!
+    let array = JSON.parse(datos);
+    for (let element of array) {
+      if (element.usuario == f.nombre && element.clave == f.contrasena) {
+        localStorage.setItem('autenticado', 'true');
+        this.router.navigate(["/inicio"]);
+        return
+      }
+    };
+    const alert = await this.alertController.create({
+      header: 'Mensaje',
+      message: 'Datos incorrectos',
+      buttons: ['OK']
+    });
 
+    await alert.present();
+    return;
   }
-
-  
 
   public avanzarDerecha() {
     const animation = this.animationCtrl
@@ -69,6 +82,14 @@ export class UsuarioPage implements OnInit {
   }
 
   public crecer() {
+    let datos = [{
+      usuario: "admin",
+      clave: "1234"
+    }, {
+      usuario: "ampi",
+      clave: "ampi"
+    }]
+    localStorage.setItem("usuarios", JSON.stringify(datos))
     const animation = this.animationCtrl
       .create()
       .addElement(this.titulo.nativeElement)

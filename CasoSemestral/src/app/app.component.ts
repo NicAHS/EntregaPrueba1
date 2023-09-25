@@ -9,12 +9,19 @@ import { MenuController,ToastController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  
   public appPages = [
     { title: 'usuario', url: '/usuario', icon: 'person' },
     { title: 'contacto', url: '/contacto', icon: 'call' },
     { title: 'servicio', url: '/servicio', icon: 'settings' },
   ];
   constructor(private router: Router,private toastController: ToastController,private menuController: MenuController) {}
+
+  autenticado = ""
+
+  ngOnInit(){
+    this.autenticado = localStorage.getItem('autenticado')!
+  }
 
   compartirApp(){
     Share.share({
@@ -25,6 +32,7 @@ export class AppComponent {
   }
 
   async cerrarSesion(){
+    localStorage.setItem('autenticado', 'false');
     this.menuController.close();
     this.router.navigateByUrl('/usuario');
 
