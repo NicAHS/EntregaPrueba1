@@ -15,8 +15,10 @@ export class RegistroPage implements OnInit {
   constructor(private router: Router, public fb: FormBuilder, private alertController: AlertController) {
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("", Validators.required),
+      'apellido': new FormControl("", Validators.required),
+      'correo': new FormControl("", Validators.required),
       'contrasena': new FormControl("", Validators.required),
-      'confirmar_contrasena': new FormControl("", Validators.required)
+      'c_contrasena': new FormControl("", Validators.required)
     })
   }
 
@@ -35,7 +37,7 @@ export class RegistroPage implements OnInit {
 
       await alert.present();
       return;
-    } else if (f.contrasena != f.confirmar_contrasena) {
+    } else if (f.contrasena != f.c_contrasena) {
       const alert = await this.alertController.create({
         header: 'Mensaje',
         message: 'Las contraseñas no coinciden',
@@ -47,9 +49,11 @@ export class RegistroPage implements OnInit {
     } else {
       var nombreUsuario = f.nombre;
       var contrasenaUsuario = f.contrasena;
+      var correoUsuario = f.correo;
 
       localStorage.setItem('nombreUsuario', nombreUsuario);
       localStorage.setItem('contrasenaUsuario', contrasenaUsuario);
+      localStorage.setItem('correoUsuario', correoUsuario);
 
       const alert = await this.alertController.create({
         header: 'Mensaje',
@@ -58,7 +62,7 @@ export class RegistroPage implements OnInit {
       });
 
       await alert.present();      
-      this.router.navigate(["/ingreso"]);
+      this.router.navigate(["/usuario"]);
     }
   }
 }
