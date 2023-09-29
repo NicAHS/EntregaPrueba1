@@ -44,7 +44,7 @@ export class UsuarioPage implements OnInit {
     var f = this.formularioLogin.value;
 
     var nombreUsuario = localStorage.getItem('usuario');
-    var contrasenaUsuario = localStorage.getItem('contrasena');
+    var contrasenaUsuario = localStorage.getItem('clave');
 
     if (this.formularioLogin.invalid) {
       const alert = await this.alertController.create({
@@ -59,7 +59,7 @@ export class UsuarioPage implements OnInit {
     let datos = localStorage.getItem("usuarios")!
     let array = JSON.parse(datos);
     for (let element of array) {
-      if (element.usuario == f.nombre && element.clave == f.contrasena) {
+      if ((element.usuario == f.nombre && element.clave == f.contrasena)||(nombreUsuario == f.nombre && contrasenaUsuario == f.contrasena)) {
         localStorage.setItem('autenticado', 'true');
         this.router.navigate(["/inicio"]);
         return

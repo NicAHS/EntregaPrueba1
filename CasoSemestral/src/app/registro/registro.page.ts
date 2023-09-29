@@ -47,13 +47,13 @@ export class RegistroPage implements OnInit {
       await alert.present();
       return;
     } else {
-      var nombreUsuario = f.nombre;
-      var contrasenaUsuario = f.contrasena;
-      var correoUsuario = f.correo;
+      var usuario = f.nombre;
+      var clave = f.contrasena;
+      var correo = f.correo;
 
-      localStorage.setItem('nombreUsuario', nombreUsuario);
-      localStorage.setItem('contrasenaUsuario', contrasenaUsuario);
-      localStorage.setItem('correoUsuario', correoUsuario);
+      localStorage.setItem('usuario', usuario);
+      localStorage.setItem('clave', clave);
+      localStorage.setItem('correo', correo);
 
       const alert = await this.alertController.create({
         header: 'Mensaje',
