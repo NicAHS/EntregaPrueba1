@@ -13,6 +13,15 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class UsuarioPage implements OnInit {
   @ViewChild("imagen", { read: ElementRef, static: true }) titulo!: ElementRef;
 
+  datos = [{
+    usuario: "admin",
+    clave: "1234"
+  }, {
+    usuario: "ampi",
+    clave: "ampi"
+  }]
+
+  
   formularioLogin: FormGroup;
   constructor(
     public fb: FormBuilder,
@@ -25,14 +34,11 @@ export class UsuarioPage implements OnInit {
       'contrasena': new FormControl("", Validators.required)
     })
   }
+  
 
   ngOnInit() {
-    this.crecer();
+    this.traslate();
   }
-
-  // onLogin() {
-  //   this.router.navigate(['/inicio', { username: this.username }]);
-  // }
 
   async ingresar() {
     var f = this.formularioLogin.value;
@@ -69,27 +75,27 @@ export class UsuarioPage implements OnInit {
     return;
   }
 
-  public avanzarDerecha() {
+  public traslate() {
     const animation = this.animationCtrl
       .create()
       .addElement(this.titulo.nativeElement)
-      .duration(2000)
-      .iterations(Infinity)
-      .fromTo('transform', 'translateX(0px)', 'translateX(200px)')
-      .fromTo('opacity', '1', '0');
+      .duration(5000)
+      .iterations(1)
+      .keyframes([
+        { offset: 0, transform: 'translateX(-100px) scale(0.5)', opacity: '1' },
+        { offset: 0.4, transform: 'translateX(100px) scale(0.8)', opacity: '1' },
+        { offset: 0.8, transform: 'translateX(-100px) scale(1)', opacity: '1' },
+        { offset: 1, transform: 'translateX(0px) scale(1.2)', opacity: '1' }
+      ])
+      .onFinish(() => {
+        this.crecer();
+      });
 
     animation.play();
   }
 
   public crecer() {
-    let datos = [{
-      usuario: "admin",
-      clave: "1234"
-    }, {
-      usuario: "ampi",
-      clave: "ampi"
-    }]
-    localStorage.setItem("usuarios", JSON.stringify(datos))
+    localStorage.setItem("usuarios", JSON.stringify(this.datos))
     const animation = this.animationCtrl
       .create()
       .addElement(this.titulo.nativeElement)
@@ -100,7 +106,4 @@ export class UsuarioPage implements OnInit {
 
     animation.play();
   }
-
-
-
 }

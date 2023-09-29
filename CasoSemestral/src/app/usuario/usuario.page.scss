@@ -8,12 +8,12 @@
     animation-name: animacion-usuario;
     animation-duration: 4s;
 }  
-@keyframes animacion-usuario {
-    0%   {left:-100px; top:0px;}
-    40%  {left:100px; top:0px;}
-    80%  {left:-100px; top:0px;}
-    100% {left:0px; top:0px;}
-}
+    /*@keyframes animacion-usuario {
+        0%   {left:-100px; top:0px;}
+        40%  {left:100px; top:0px;}
+        80%  {left:-100px; top:0px;}
+        100% {left:0px; top:0px;}
+    }*/
 
 ion-item > ion-label,ion-input{
     /*border: SOLID RED 2PX;*/
