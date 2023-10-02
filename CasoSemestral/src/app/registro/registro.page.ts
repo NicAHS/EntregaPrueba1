@@ -26,6 +26,7 @@ export class RegistroPage implements OnInit {
   }
 
   async registrar() {
+    
     var f = this.formularioLogin.value;
 
     if (this.formularioLogin.invalid) {
@@ -48,10 +49,12 @@ export class RegistroPage implements OnInit {
       return;
     } else {
       var usuario = f.nombre;
+      var apellido = f.apellido;
       var clave = f.contrasena;
       var correo = f.correo;
 
       localStorage.setItem('usuario', usuario);
+      localStorage.setItem('apellido', apellido);
       localStorage.setItem('clave', clave);
       localStorage.setItem('correo', correo);
 

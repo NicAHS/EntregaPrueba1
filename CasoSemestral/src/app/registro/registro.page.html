@@ -13,8 +13,10 @@
     <p class="message">Registrate para porder acceder a la app completa</p>
     <div class="flex">
       <ion-item lines="full">
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input aria-label="nombre" formControlName="nombre" class="input" type="text" placeholder="Nombre"></ion-input>
+
+        <ion-input labelPlacement="floating" aria-label="nombre" formControlName="nombre" class="input" type="text" >
+          <div slot="label">Nombre</div>
+        </ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Apellido</ion-label>
