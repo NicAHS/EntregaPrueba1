@@ -15,14 +15,18 @@ export class AppComponent {
     { title: 'contacto', url: '/contacto', icon: 'call' },
     { title: 'servicio', url: '/servicio', icon: 'settings' },
   ];
-  constructor(private router: Router,private toastController: ToastController,private menuController: MenuController) {}
+  constructor(private router: Router,private toastController: ToastController,private menuController: MenuController,
+    private menu: MenuController) {}
 
   autenticado = ""
 
   ngOnInit(){
     this.autenticado = localStorage.getItem('autenticado')!
   }
-
+  abrirMapa() {
+    this.router.navigate(["/mapa"]);
+    this.menu.close();
+  }
   compartirApp(){
     Share.share({
       title: 'Compartit registrApp',
