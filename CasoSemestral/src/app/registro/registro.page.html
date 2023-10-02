@@ -13,27 +13,30 @@
     <p class="message">Registrate para porder acceder a la app completa</p>
     <div class="flex">
       <ion-item lines="full">
-
-        <ion-input labelPlacement="floating" aria-label="nombre" formControlName="nombre" class="input" type="text" >
+        <ion-input labelPlacement="floating" formControlName="nombre" class="input" type="text" placeholder="Alguien">
           <div slot="label">Nombre</div>
         </ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input aria-label="apellido" formControlName="apellido" class="input" type="text" placeholder="Apellido"></ion-input>
+        <ion-input labelPlacement="floating" formControlName="apellido" class="input" type="text" placeholder="Ejemplo">
+          <div slot="label">Apellido</div>
+        </ion-input>
       </ion-item>
     </div>  
     <ion-item lines="full">
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input aria-label="correo" formControlName="correo" class="input" type="text" placeholder="ejemplo@mail.com"></ion-input>
+      <ion-input labelPlacement="floating" formControlName="correo" class="input" type="text" placeholder="ejemplo@mail.com">
+        <div slot="label">Correo</div>
+      </ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input aria-label="contrasena" formControlName="contrasena" class="input" type="password" placeholder="contraseña"></ion-input>
+      <ion-input labelPlacement="floating" formControlName="contrasena" class="input" type="password" placeholder="Contraseña">
+        <div slot="label">Contraseña</div>
+      </ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Confirmar contraseña</ion-label>
-      <ion-input aria-label="c_contrasena" formControlName="c_contrasena" class="input" type="password" placeholder="contraseña"></ion-input>
+      <ion-input labelPlacement="floating" formControlName="c_contrasena" class="input" type="password" placeholder="Confirmar ontraseña">
+        <div slot="label">Confirmar ontraseña</div>
+      </ion-input>
     </ion-item>
     <ion-button class="submit" type="submit" (click)="registrar()">Registrarse</ion-button>
     <p class="signin">¿Ya tienes una cuenta? <a href="#">Ingresar</a> </p>

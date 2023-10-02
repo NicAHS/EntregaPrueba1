@@ -1,18 +1,12 @@
-
-#tittle{
-    padding-top: 50px;
-}
-#imagen-inicio{
+.imagen-inicio{
     height: 200px;
     position: relative;
     animation-name: animacion-usuario;
     animation-duration: 4s;
 }  
-#button-inicio-sesion{
-   display: flex;
-   justify-content: center; 
+
+.titulo_inicial{
+    font-weight: bold;
+    text-align: center;
+    
 }
-#buttonn{
-    width: 90%;
-    height: 50% !important;
- }
