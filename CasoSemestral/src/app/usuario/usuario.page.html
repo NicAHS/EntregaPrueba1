@@ -2,8 +2,9 @@
   <ion-toolbar>
     <ion-buttons>
       <ion-menu-button color="dark"></ion-menu-button>
-    </ion-buttons>
       <ion-title>Usuario</ion-title>
+    </ion-buttons>
+      
   </ion-toolbar>
 </ion-header>
 
@@ -11,27 +12,32 @@
 <ion-content class="inicio-sesion">
   <div id="inicio-sesion">
 
-    <ion-img #imagen id="imagen-inicio" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"></ion-img>
+    <ion-img #imagen class="imagen-inicio" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"></ion-img>
 
-    <ion-header>
-      <ion-title>Bienvenido</ion-title>
-    </ion-header>
+
+      <div class="titulo_inicial">Bienvenido</div>
+
     <form [formGroup]="formularioLogin">
       <ion-item>
-        <ion-label position="floating">Nombre de usuario</ion-label>
-        <ion-input aria-label="Usuario" formControlName="nombre" placeholder="ejemplo@mail.com"></ion-input>
+        <ion-input labelPlacement="floating" formControlName="nombre" class="input" type="text" placeholder="ejemplo@mail.com">
+          <div slot="label">Nombre de usuario</div>
+        </ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input aria-label="contrasena" formControlName="contrasena" type="password" placeholder="***********"></ion-input>
+        <ion-input labelPlacement="floating" formControlName="contrasena" class="input" type="password" placeholder="***********">
+          <div slot="label">Contraseña</div>
+        </ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="primary" expand="block" (click)="ingresar()">Ingresar</ion-button>
+          <ion-button class="borrar" type="submit" color="primary" expand="block" (click)="ingresar()">Ingresar</ion-button>
         </ion-col>
       </ion-row>
       <div style="display: flex; justify-content: center;">
         <ion-button fill="clear" href="/recuperar">Recuperar contraseña</ion-button>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <ion-button fill="clear" href="/registro">Crear cuenta</ion-button>
       </div>
     </form>
   </div>
