@@ -2,21 +2,16 @@
   <ion-toolbar>
     <ion-buttons>
       <ion-menu-button color="dark"></ion-menu-button>
-      <ion-title>Usuario</ion-title>
+      <ion-title class="titulo_usuario">Usuario</ion-title>
     </ion-buttons>
-      
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content class="inicio-sesion">
   <div id="inicio-sesion">
-
     <ion-img #imagen class="imagen-inicio" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png"></ion-img>
-
-
       <div class="titulo_inicial">Bienvenido</div>
-
     <form [formGroup]="formularioLogin">
       <ion-item>
         <ion-input labelPlacement="floating" formControlName="nombre" class="input" type="text" placeholder="ejemplo@mail.com">

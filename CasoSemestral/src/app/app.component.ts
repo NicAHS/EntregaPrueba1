@@ -11,9 +11,11 @@ import { MenuController,ToastController } from '@ionic/angular';
 export class AppComponent {
   
   public appPages = [
-    { title: 'usuario', url: '/usuario', icon: 'person' },
-    { title: 'contacto', url: '/contacto', icon: 'call' },
-    { title: 'servicio', url: '/servicio', icon: 'settings' },
+    { title: 'Usuario', url: '/usuario', icon: 'person' },
+    { title: 'Contacto', url: '/contacto', icon: 'call' },
+    { title: 'Servicio', url: '/servicio', icon: 'settings' },
+    { title: 'Asistencia', url: '/asistencia', icon: 'calendar' },
+    { title: 'Mapa', url: '/mapa', icon: 'map' },
   ];
   constructor(private router: Router,private toastController: ToastController,private menuController: MenuController,
     private menu: MenuController) {}
