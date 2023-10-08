@@ -9,10 +9,30 @@
 
 <ion-content>
   <div id="contenito_contacto">
-    <div class="ion-padding">Para dudas/consultas o solicitar ayuda, comunicate con nosotros:</div>
   <ion-list>
-    <ion-item>+56 9 12345678</ion-item>
-    <ion-item>Correo: mesadeayuda@duocuc.cl</ion-item>
+    <ion-card style="padding: 5px; color: black;" ><div><strong>Para dudas/consultas o solicitar ayuda, comunicate con nosotros.</strong></div>
+      <ion-card style="padding: 5px; color: black;">En caso de problemas, rellena nuestro formulario, envia un correo o llámanos.</ion-card>
+      <ion-card>
+        <ion-item>+56 9 12345678</ion-item>
+        <ion-item>Correo: mesadeayuda@duocuc.cl</ion-item>
+      </ion-card>
+    </ion-card>
+    <ion-card style="padding: 5px; color: black;">
+      
+
+      <form class="form">
+        <p class="message" style="text-align: center;"><strong>Formulario de notificación de problemas</strong></p>
+        <div class="flex">
+          <ion-item lines="full">
+            <ion-textarea labelPlacement="floating"  class="input" type="text" >
+              <div slot="label">Describe el problema.</div>
+            </ion-textarea>
+          </ion-item>
+        </div>  
+      </form>
+
+
+    </ion-card>
   </ion-list>
 
   </div>

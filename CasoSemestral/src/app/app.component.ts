@@ -32,7 +32,7 @@ export class AppComponent {
   }
   compartirApp(){
     Share.share({
-      title: 'Compartit registrApp',
+      title: 'CompartiR registrApp',
       url: 'https://definicion.de/wp-content/uploads/2017/04/descarga.png',
       dialogTitle: 'Compartir con'
     })
