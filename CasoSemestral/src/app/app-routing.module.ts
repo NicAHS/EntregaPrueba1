@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'usuario',
     loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioPageModule)
-  },  {
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
@@ -41,6 +42,14 @@ const routes: Routes = [
   {
     path: 'principal',
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'prueba',
+    loadChildren: () => import('./prueba/prueba.module').then( m => m.PruebaPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 ];
