@@ -15,6 +15,7 @@ export class AppComponent {
     { title: 'Principal', url: '/principal', icon: 'home' },
     { title: 'Contacto', url: '/contacto', icon: 'call' },
     { title: 'Servicio', url: '/servicio', icon: 'settings' },
+    { title: 'Prueba', url: '/prueba', icon: 'game-controller' },
     { title: 'Asistencia', url: '/asistencia', icon: 'calendar' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
   ];

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>prueba</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">prueba</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-item class="item" *ngFor="let personaje of personajes" [routerLink]="['/perfil/' + personaje.id ]">
+  <ion-avatar aria-hidden="true" class="imagen" slot="start">
+    <img src="{{ personaje.image }}" alt="">  <!-- muestra la imagen del objeto results-->
+  </ion-avatar>
+  <ion-label>{{ personaje.name }}</ion-label>  <!-- muestra el nobmre del objeto results-->
+</ion-item>
