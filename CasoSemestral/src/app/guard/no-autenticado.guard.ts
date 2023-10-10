@@ -13,7 +13,7 @@ export class NoAutenticadoGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(localStorage.getItem('autenticado')){
-        this.router.navigate(["/ingreso"])
+        this.router.navigate(["/usuario"])
         return false;
       }else{
         return true;

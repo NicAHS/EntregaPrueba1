@@ -32,23 +32,16 @@ export class AppComponent {
   }
   compartirApp(){
     Share.share({
-      title: 'CompartiR registrApp',
+      title: 'Compartir registrApp',
       url: 'https://definicion.de/wp-content/uploads/2017/04/descarga.png',
       dialogTitle: 'Compartir con'
     })
   }
 
-  async cerrarSesion(){
-    localStorage.setItem('autenticado', 'false');
-    this.menuController.close();
-    this.router.navigateByUrl('/usuario');
-
-    const toast = await this.toastController.create({
-      message: 'Cerrando sesión',
-      duration: 2000,
-      position: 'top'
-    });
-    toast.present();
+  cerrarSesion(){
+    localStorage.removeItem('autenticado');
+    this.router.navigate(["/usuario"]);
+    this.menu.close();
   }
 
 }
