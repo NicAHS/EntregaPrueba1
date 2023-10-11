@@ -20,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [AutenticadoGuard]
   },
   {
     path: 'recuperar',
@@ -45,7 +46,16 @@ const routes: Routes = [
   },
   {
     path: 'principal',
-    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule),
+    canActivate: [AutenticadoGuard]
+  },
+  {
+    path: 'prueba',
+    loadChildren: () => import('./prueba/prueba.module').then( m => m.PruebaPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 ];

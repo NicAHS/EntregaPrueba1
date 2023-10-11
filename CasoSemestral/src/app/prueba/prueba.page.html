@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>prueba</ion-title>
+    <ion-buttons>
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-title class="titulo_rick">Rick And Morty</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +15,15 @@
   </ion-header>
 </ion-content>
 
-<ion-item class="item" *ngFor="let personaje of personajes" [routerLink]="['/perfil/' + personaje.id ]">
+<ion-item class="item" *ngFor="let personaje of personajes" [routerLink]="['/perfil/' + personaje.id ]" >
   <ion-avatar aria-hidden="true" class="imagen" slot="start">
     <img src="{{ personaje.image }}" alt="">  <!-- muestra la imagen del objeto results-->
   </ion-avatar>
   <ion-label>{{ personaje.name }}</ion-label>  <!-- muestra el nobmre del objeto results-->
 </ion-item>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-back-button color="dark" text="Volver" defaultHref="/"></ion-back-button>
+  </ion-toolbar>
+</ion-footer>

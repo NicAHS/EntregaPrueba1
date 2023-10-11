@@ -1,6 +1,8 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AnimationController, MenuController } from '@ionic/angular';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+
 
 @Component({
   selector: 'app-inicio',
@@ -13,6 +15,8 @@ export class InicioPage implements OnInit {
   username: string | null = null;
 
   constructor(private route: ActivatedRoute,private animationCtrl: AnimationController) { }
+
+  nombreUsuario = localStorage.getItem('usuario');
 
   ngOnInit() {
     this.username = this.route.snapshot.paramMap.get('username');
@@ -72,4 +76,16 @@ export class InicioPage implements OnInit {
   
     animationShake.play();
   }
+
+  async scanQRCode() {
+    try {
+      const result = await BarcodeScanner.startScan();
+      if (result.hasContent) {
+        console.log(`Scanned content: ${result.content}`);
+      }
+    } catch (error) {
+      console.error('QR scanning failed:', error);
+    }
+  }
+
 }

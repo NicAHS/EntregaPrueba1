@@ -1,9 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+    <ion-buttons>
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-title class="titulo_perfil">Perfil</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <div *ngIf="personaje">
     <ion-card>
@@ -16,9 +18,11 @@
         <p>{{ personaje.status}}</p>
         <p>{{ personaje.location.name}}</p>
       </ion-card-content>
-
     </ion-card>
   </div>
-
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-back-button color="dark" text="Volver" defaultHref="/"></ion-back-button>
+  </ion-toolbar>
+</ion-footer>
