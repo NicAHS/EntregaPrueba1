@@ -24,10 +24,11 @@
         <p class="message" style="text-align: center;"><strong>Formulario de notificación de problemas</strong></p>
         <div class="flex">
           <ion-item lines="full">
-            <ion-textarea labelPlacement="floating"  class="input" type="text" >
+            <ion-textarea #Texto labelPlacement="floating"  class="input" type="text" >
               <div slot="label">Describe el problema.</div>
             </ion-textarea>
           </ion-item>
+          <div style="display: flex; justify-content: end;"><ion-button (click)="enviarFormulario()" type="submit" fill="clear" style="color: black;">Enviar</ion-button></div>
         </div>  
       </form>
 
