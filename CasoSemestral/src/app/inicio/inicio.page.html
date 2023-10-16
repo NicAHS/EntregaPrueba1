@@ -9,5 +9,8 @@
 
 <ion-content>
   <div id="contenidoqr"><ion-img #qr id="qrcode" src="https://rrppduocucsancarlos.files.wordpress.com/2014/11/qrplanetyutu.png?w=474"></ion-img></div>
-  <div id="iconoqr"><ion-button href="/asistencia" >Escanear</ion-button></div>
+  <div id="iconoqr"><ion-button (click)="startScan()">Escanear</ion-button></div>
+  <div *ngIf="lectura && lectura!='' ">
+    <ion-button fill="clear" [href]=lectura style="color: black; display: flex; justify-content: center;">Ir</ion-button>
+  </div>
 </ion-content>
