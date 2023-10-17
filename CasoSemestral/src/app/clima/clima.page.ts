@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 interface WeatherResponse {
   main: {
     temp: number;
+    
     // Otras propiedades si las hay
   };
   weather: [
