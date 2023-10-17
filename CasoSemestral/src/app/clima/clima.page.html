@@ -8,12 +8,26 @@
 </ion-header>
 
 <ion-content >
-
   <ion-card>
-    <ion-item>
-      {{(weatherTemp.temp - 273)}}
+    <div style="padding: 10px; color: black; font-size: 15px; text-align: justify;">
+      <strong>Aqui te entregamos información del clima que te podria ayudar a escoger tu ropa de hoy <br> Que tengas un lindo día!</strong></div>
+  </ion-card>
+  <ion-card>
+    <ion-item >
+       <div class="elclima"><div>Temperatura actual:</div>  <div>{{(weatherTemp.temp - 273.15) | number:'.2'}}°C</div></div>
+    </ion-item>
+    <br>
+    <ion-item >
+      <div class="elclima">Temperatura máxima:  <div>{{(weatherTemp.temp_max - 273.15) | number:'.2'}}°C</div></div>
+    </ion-item>
+    <br>
+    <ion-item >
+      <div class="elclima">Temperatura mínima:  <div>{{(weatherTemp.temp_min - 273.15) | number:'.2'}}°C</div></div>
+    </ion-item>
+    <br>
+    <ion-item >
+      <div class="elclima">Humedad:  <div>{{(weatherTemp.humidity)}}°C</div></div>
+      <div><img [src]=weatherIcon alt=""></div>
     </ion-item>
   </ion-card>
 </ion-content>
-
-https://www.youtube.com/watch?v=gDiDi2SgHfY&t=933s

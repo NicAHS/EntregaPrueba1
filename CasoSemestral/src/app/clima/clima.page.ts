@@ -6,6 +6,9 @@ import { environment } from 'src/environments/environment';
 interface WeatherResponse {
   main: {
     temp: number;
+    temp_max: number;
+    temp_min: number;
+    humidity: number;
     
     // Otras propiedades si las hay
   };
@@ -30,6 +33,7 @@ export class ClimaPage implements OnInit {
 
   weatherTemp : any = {}
   weatherDetails: any
+  weatherIcon : any
 
   constructor(public httpClient:HttpClient) {
     this.loadData()
@@ -42,6 +46,8 @@ export class ClimaPage implements OnInit {
       console.log(results);
       this.weatherTemp = results['main']
       this.weatherDetails = results['weather'][0]
+      this.weatherIcon = `https://openweathermap.org/img/wn/${this.weatherIcon.icon}@2x.png`
+      this.weatherIcon = `https://openweathermap.org/img/wn/${this.weatherIcon.icon}@2x.png`
       console.log(this.weatherTemp)
     })
   }
