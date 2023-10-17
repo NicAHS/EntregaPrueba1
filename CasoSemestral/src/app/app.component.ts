@@ -19,6 +19,7 @@ export class AppComponent {
     { title: 'Asistencia', url: '/asistencia', icon: 'calendar' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
     { title: 'Registrar Asistencia', url: '/inicio', icon: 'calendar' },
+    { title: 'Clima', url: '/clima', icon: 'climate' },
   ];
   constructor(private router: Router,private toastController: ToastController,private menuController: MenuController,
     private menu: MenuController) {}

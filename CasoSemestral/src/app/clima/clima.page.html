@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>clima</ion-title>
+    <ion-buttons>
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-title class="titulo_contacto">Clima</ion-title>
+    </ion-buttons>      
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">clima</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+  <ion-item>
+    {{(weatherTemp.temp - 273)}}
+  </ion-item>
 </ion-content>
+
+https://www.youtube.com/watch?v=gDiDi2SgHfY&t=933s
