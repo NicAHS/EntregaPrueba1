@@ -14,8 +14,6 @@ export class AppComponent {
     { title: 'Usuario', url: '/usuario', icon: 'person' },
     { title: 'Principal', url: '/principal', icon: 'home' },
     { title: 'Contacto', url: '/contacto', icon: 'call' },
-    { title: 'Servicio', url: '/servicio', icon: 'settings' },
-    { title: 'Prueba', url: '/prueba', icon: 'game-controller' },
     { title: 'Asistencia', url: '/asistencia', icon: 'calendar' },
     { title: 'Mapa', url: '/mapa', icon: 'map' },
     { title: 'Registrar Asistencia', url: '/inicio', icon: 'calendar' },
