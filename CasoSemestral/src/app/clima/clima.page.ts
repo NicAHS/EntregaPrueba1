@@ -9,6 +9,7 @@ interface WeatherResponse {
     temp_max: number;
     temp_min: number;
     humidity: number;
+    feels_like : number;
     
     // Otras propiedades si las hay
   };

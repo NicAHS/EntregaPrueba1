@@ -9,3 +9,114 @@
     position: fixed;
     z-index: -1;
 }
+
+/*--------------------*/
+
+.claseclima{
+    display: flex;
+    justify-content: center;
+}
+
+
+.cardContainer {
+    width: fit-content;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: aliceblue;
+    border: 1px solid ;
+    cursor: pointer;
+  }
+  
+  .city {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
+    color: black;
+  }
+  
+  .weather {
+    font-weight: 500;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    color: black;
+  }
+  
+  .temp {
+    font-size: 1.8em;
+    color: black;
+  }
+  
+  .minmaxContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .min,
+  .max {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px;
+  }
+  
+  .max {
+    align-items: flex-start;
+    border-left: 2px solid white;
+  }
+  
+  .maxHeading,
+  .minHeading {
+    font-size: 0.7em;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .maxTemp,
+  .minTemp {
+    font-size: 0.6em;
+    font-weight: 500;
+    color: black;
+  }
+  
+  .cardContainer::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    position: absolute;
+    background-color: rgb(144, 161, 255);
+    z-index: -1;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transition: all 1s;
+  }
+  
+  .cardContainer:hover::before {
+    transform: translate(-50px, 50px);
+  }
+  
+  .humedad{
+    font-size: 0.7em;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+  }

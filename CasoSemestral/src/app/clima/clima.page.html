@@ -7,6 +7,49 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+
+  <ion-card>
+    <div style="padding: 10px; color: black; font-size: 15px; text-align: justify;">
+      <strong>Aqui te entregamos información del clima que te podria ayudar a escoger tu ropa de hoy <br> Que tengas un lindo día!</strong></div>
+  </ion-card>
+
+  <div class="claseclima">
+    <div class="cardContainer">
+      <div class="card">
+        <p class="city">Temperatura actual</p>        
+        <p class="temp">{{(weatherTemp.temp - 273.15) | number:'.1'}}°C</p>
+        <div class="minmaxContainer">
+          <div class="min">
+            <p class="minHeading">Min</p>
+            <p class="minTemp">{{(weatherTemp.temp_min - 273.15) | number:'.1'}}°C</p>
+          </div>
+          <div class="max">
+            <p class="maxHeading">Max</p>
+            <p class="maxTemp">{{(weatherTemp.temp_max - 273.15) | number:'.1'}}°C</p>
+          </div>
+        </div>
+        <div>
+          <p class="humedad">Humedad: {{(weatherTemp.humidity)}}%</p>
+          <p class="humedad">Sensación Térmica : {{(weatherTemp.feels_like - 273.15) | number:'.1'}}°C</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+<!---
+
 <ion-content >
   <ion-card>
     <div style="padding: 10px; color: black; font-size: 15px; text-align: justify;">
@@ -31,3 +74,4 @@
     </ion-item>
   </ion-card>
 </ion-content>
+--->
